@@ -1,0 +1,61 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        gainsboro: { "100": "#ddd", "200": "#d8d8d8" },
+        black: "#000",
+        lightseagreen: "#00b297",
+        "shades-white": "#fff",
+        "studio-lightmode-midseparator-dee3eb": "#dee3eb",
+        darkslategray: { "100": "#434343", "200": "#424242" },
+        whitesmoke: { "100": "#f3f3f3", "200": "#ececec", "300": "#eaeaea" },
+        gray: { "100": "#777", "200": "#121212" },
+        lightgray: "#d2d2d2",
+        dimgray: "#595959",
+        darkgray: "#999",
+        "other-outlined-border": "rgba(0, 0, 0, 0.23)",
+        slategray: "#576074",
+        blueviolet: "#5922ce",
+        linen: "#fcf1e5",
+      },
+      fontFamily: {
+        roboto: "Roboto",
+        poppins: "Poppins",
+        inter: "Inter",
+        "lobster-two": "'Lobster Two'",
+      },
+      borderRadius: {
+        "3xs": "10px",
+        "2xs-5": "10.5px",
+        mini: "15px",
+        smi: "13px",
+      },
+    },
+    fontSize: {
+      xs: "12px",
+      "3xl": "22px",
+      base: "16px",
+      xl: "20px",
+      "5xl": "24px",
+      sm: "14px",
+      "13xl": "32px",
+      "21xl": "40px",
+      mini: "15px",
+      lg: "18px",
+      "17xl": "36px",
+      "2xs": "11px",
+    },
+    screens: {
+      lg: { max: "1200px" },
+      md: { max: "960px" },
+      sm: { max: "420px" },
+      mq768: { raw: "screen and (max-width: 768px)" },
+    },
+  },
+  corePlugins: { preflight: false },
+};
