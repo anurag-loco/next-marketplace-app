@@ -101,7 +101,7 @@ const CourseListContainer = ({
                   {coursePrice}
                 </div>
               </div>
-              <div className="relative text-5xl leading-[34px] font-inter text-gray-200 text-right">
+              <div className="relative text-5xl leading-[34px] font-inter text-gray text-right">
                 {courseDiscountPrice}
               </div>
             </div>
@@ -128,7 +128,7 @@ const CourseListContainer = ({
                   {courseSubtitle}
                 </div>
               </div>
-              <div className="relative text-5xl leading-[34px] font-inter text-gray-200 text-right">
+              <div className="relative text-5xl leading-[34px] font-inter text-gray text-right">
                 {courseOriginalPrice}
               </div>
             </div>
@@ -155,7 +155,7 @@ const CourseListContainer = ({
                   {courseName}
                 </div>
               </div>
-              <div className="relative text-5xl leading-[34px] font-inter text-gray-200 text-right">
+              <div className="relative text-5xl leading-[34px] font-inter text-gray text-right">
                 {courseDiscountPrice2}
               </div>
             </div>

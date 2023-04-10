@@ -16,7 +16,7 @@ const CourseForm = ({ courseId, courseName, coursePrice, onRecCard1Click }) => {
               {courseName}
             </div>
           </div>
-          <div className="relative text-5xl leading-[34px] font-inter text-gray-200 text-right">
+          <div className="relative text-5xl leading-[34px] font-inter text-gray text-right">
             {coursePrice}
           </div>
         </div>

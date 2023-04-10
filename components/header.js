@@ -15,6 +15,14 @@ const Header = ({
 
   const router = useRouter();
 
+  const onYourHomepageClick = () => {
+    router.push("/student-homepage");
+  };
+
+  const onCreateBtnClick = () => {
+    router.push("/create-page");
+  };
+
   const onLoginBtnClick = () => {
     router.push("/");
   };
@@ -31,12 +39,18 @@ const Header = ({
         className="flex flex-row py-2.5 px-7 items-center justify-end gap-[27px] mq768:gap-[14px]"
         style={buttonsStyle}
       >
-        <button className="cursor-pointer [border:none] py-0.5 px-[5px] bg-[transparent] rounded-3xs flex flex-row items-center justify-center">
+        <button
+          className="cursor-pointer [border:none] py-0.5 px-[5px] bg-[transparent] rounded-3xs flex flex-row items-center justify-center"
+          onClick={onYourHomepageClick}
+        >
           <div className="relative text-base leading-[220.52%] font-inter text-black text-center mq768:leading-[20px]">
             Your Homepage
           </div>
         </button>
-        <button className="cursor-pointer py-0.5 px-[5px] bg-[transparent] rounded-3xs flex flex-row items-center justify-center border-[1px] border-solid border-lightgray">
+        <button
+          className="cursor-pointer py-0.5 px-[5px] bg-[transparent] rounded-3xs flex flex-row items-center justify-center border-[1px] border-solid border-lightgray"
+          onClick={onCreateBtnClick}
+        >
           <div className="self-stretch relative text-base leading-[220.52%] font-inter text-black text-center flex items-center justify-center mq768:leading-[20px]">
             Create Course
           </div>

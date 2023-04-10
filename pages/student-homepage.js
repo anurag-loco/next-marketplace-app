@@ -118,7 +118,7 @@ const StudentHomepage = () => {
                       Getting Started with AWS
                     </div>
                   </div>
-                  <div className="relative text-5xl leading-[34px] font-inter text-gray-200 text-right">
+                  <div className="relative text-5xl leading-[34px] font-inter text-gray text-right">
                     $265
                   </div>
                 </div>
@@ -141,7 +141,7 @@ const StudentHomepage = () => {
                       Master Vue.js
                     </div>
                   </div>
-                  <div className="relative text-5xl leading-[34px] font-inter text-gray-200 text-right">
+                  <div className="relative text-5xl leading-[34px] font-inter text-gray text-right">
                     $130
                   </div>
                 </div>
@@ -164,7 +164,7 @@ const StudentHomepage = () => {
                       Learn React 18
                     </div>
                   </div>
-                  <div className="relative text-5xl leading-[34px] font-inter text-gray-200 text-right">
+                  <div className="relative text-5xl leading-[34px] font-inter text-gray text-right">
                     $195
                   </div>
                 </div>
