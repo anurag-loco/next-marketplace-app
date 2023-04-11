@@ -8,7 +8,7 @@ const LoginFormContainer = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('')
 
-  const onButtonClick = async () => {
+  const onButtonClick = async (e) => {
     e.preventDefault()
 
     async function handleAuth() {
@@ -51,7 +51,7 @@ const LoginFormContainer = () => {
         />
         <input
           className="font-roboto text-xs bg-shades-white self-stretch rounded overflow-hidden flex flex-row py-2.5 px-3.5 items-center justify-start leading-[18px] [outline:none] border-[1px] border-solid border-studio-lightmode-midseparator-dee3eb"
-          type="text"
+          type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"

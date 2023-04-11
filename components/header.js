@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import { useRouter } from "next/router";
+import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
 
 const Header = ({
   yourHomepageJustifyContent,
@@ -14,17 +15,26 @@ const Header = ({
   }, [yourHomepageJustifyContent, yourHomepageGap]);
 
   const router = useRouter();
-
+  const user = useUser()
+  const supabaseClient = useSupabaseClient()
   const onYourHomepageClick = () => {
-    router.push("/student-homepage");
+
+
+    if (user)
+      router.push("/student-homepage/" + user.id);
   };
 
   const onCreateBtnClick = () => {
     router.push("/create-page");
   };
 
-  const onLoginBtnClick = () => {
-    router.push("/");
+  const onLoginBtnClick = async () => {
+    if (user) {
+      await supabaseClient.auth.signOut().then(() => {
+        router.push('/')
+      })
+    } else
+      router.push("/");
   };
 
   return (
@@ -60,7 +70,7 @@ const Header = ({
           onClick={onLoginBtnClick}
         >
           <b className="relative text-base leading-[220.52%] font-inter text-shades-white text-center">
-            Login
+            {user ? 'Logout' : 'Login'}
           </b>
         </button>
       </div>

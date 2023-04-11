@@ -34,6 +34,7 @@ import { createServerSupabaseClient } from "@supabase/auth-helpers-nextjs";
 export async function getServerSideProps(ctx) {
   const client = createServerSupabaseClient(ctx);
   let { data } = await client.auth.getUser()
+
   let { user } = data
   if (!user) {
     return {
@@ -58,7 +59,6 @@ export async function getServerSideProps(ctx) {
       }
     }
   }
-
 
   return {
     props: {}
