@@ -8,7 +8,7 @@ const CourseCard = ({
   id,
   onRecCard1Click,
 }) => {
-  const holidayDetailsStyle = useMemo(() => {
+  const holidayDetails3Style = useMemo(() => {
     return {
       backgroundColor: propBackgroundColor,
     };
@@ -26,7 +26,7 @@ const CourseCard = ({
       />
       <div
         className="self-stretch rounded-t-none rounded-b-3xs bg-shades-white flex flex-col py-5 px-4 items-center justify-center"
-        style={holidayDetailsStyle}
+        style={holidayDetails3Style}
       >
         <div className="self-stretch flex flex-row items-center justify-start">
           <div className="flex-1 flex flex-col items-start justify-start gap-[3px]">

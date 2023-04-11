@@ -24,11 +24,12 @@ const CourseListContainer = ({
     };
   }, [priceHeight, priceAlignSelf]);
 
-  const holidayDetails1Style = useMemo(() => {
+  const holidayDetailsStyle = useMemo(() => {
     return {
       flex: propFlex,
     };
   }, [propFlex]);
+
 
   return (
     <div className="self-stretch flex flex-col pt-2.5 px-[82px] pb-0 items-start justify-start gap-[10px] text-center text-5xl text-black font-inter mq768:flex-col">

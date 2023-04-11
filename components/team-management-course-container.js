@@ -9,7 +9,7 @@ const TeamManagementCourseContainer = () => {
 
   return (
     <div className="self-stretch flex flex-col py-0 px-20 items-start justify-start text-left text-17xl text-black font-inter mq768:pl-[50px] mq768:pr-[50px] mq768:box-border">
-      <div className="self-stretch rounded-mini bg-linen flex flex-row items-center justify-start gap-[70px] md:flex-col md:items-center md:justify-start md:pt-[3rem] md:box-border">
+      <div className="self-stretch rounded-mini bg-honeydew flex flex-row items-center justify-start gap-[70px] md:flex-col md:items-center md:justify-start md:pt-[3rem] md:box-border">
         <div className="flex-1 flex flex-col py-0 px-[49px] items-start justify-start gap-[31px] md:gap-[25px] md:items-center md:justify-center md:pl-0 md:pr-0 md:box-border md:flex-[unset] md:self-stretch">
           <div className="w-[450px] flex flex-col items-start justify-start gap-[2px] md:items-start md:justify-start">
             <b className="self-stretch relative leading-[80.5%] md:text-center">

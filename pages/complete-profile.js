@@ -20,7 +20,7 @@ const CompleteProfile = () => {
       <div className="self-stretch bg-whitesmoke-200 flex flex-col pt-[57px] px-0 pb-[61px] items-center justify-center">
         <CompleteProfileForm />
       </div>
-      <Footer productId="/group-561.svg" propFlex="unset" />
+      <Footer productId="/group-562.svg" propFlex="unset" />
     </div>
   );
 };

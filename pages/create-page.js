@@ -18,7 +18,7 @@ const CreatePage = () => {
         onCoursePlanetClick={onCoursePlanetClick}
       />
       <MainForm />
-      <Footer productId="/group-561.svg" propFlex="unset" />
+      <Footer productId="/group-562.svg" propFlex="unset" />
     </div>
   );
 };
