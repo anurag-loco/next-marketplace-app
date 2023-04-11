@@ -53,7 +53,7 @@ const CourseListContainer = ({
             />
             <div
               className="self-stretch flex-1 rounded-t-none rounded-b-3xs bg-shades-white flex flex-col py-5 px-4 items-center justify-center"
-              style={holidayDetails1Style}
+            
             >
               <div className="self-stretch flex flex-row items-center justify-start sm:flex-row sm:gap-[0px] sm:items-center sm:justify-start">
                 <div className="flex-1 flex flex-col items-start justify-start">
