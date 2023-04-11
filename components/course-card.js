@@ -5,6 +5,7 @@ const CourseCard = ({
   softwareTestingText,
   devOpsImageUrl,
   propBackgroundColor,
+  id,
   onRecCard1Click,
 }) => {
   const holidayDetailsStyle = useMemo(() => {
@@ -16,7 +17,7 @@ const CourseCard = ({
   return (
     <div
       className="self-stretch flex-1 rounded-3xs shadow-[0px_0px_26px_rgba(0,_0,_0,_0.08)] flex flex-col items-center justify-start cursor-pointer text-left text-xl text-darkslategray-200 font-roboto border-[1px] border-solid border-whitesmoke-200 mq768:flex-1 mq768:items-center mq768:justify-start"
-      onClick={onRecCard1Click}
+      onClick={() => onRecCard1Click(id)}
     >
       <img
         className="self-stretch relative rounded-t-3xs rounded-b-none max-w-full overflow-hidden h-[242px] shrink-0 object-cover"

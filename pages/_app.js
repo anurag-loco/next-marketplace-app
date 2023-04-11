@@ -5,6 +5,9 @@ import { ThemeProvider, createTheme } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
 
 import "./global.css";
+import { createBrowserSupabaseClient } from '@supabase/auth-helpers-nextjs'
+import { SessionContextProvider } from '@supabase/auth-helpers-react'
+import { useState } from 'react'
 
 export default function MyApp(props) {
   const { Component, pageProps } = props;
@@ -18,7 +21,7 @@ export default function MyApp(props) {
   }, []);
 
   const muiTheme = createTheme();
-
+  const [supabaseClient] = useState(() => createBrowserSupabaseClient())
   return (
     <React.Fragment>
       <Head>
@@ -31,7 +34,12 @@ export default function MyApp(props) {
       <ThemeProvider theme={muiTheme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
-        <Component {...pageProps} />
+        <SessionContextProvider
+          supabaseClient={supabaseClient}
+          initialSession={pageProps.initialSession}
+        >
+          <Component {...pageProps} />
+        </SessionContextProvider>
       </ThemeProvider>
     </React.Fragment>
   );

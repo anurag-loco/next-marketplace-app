@@ -26,3 +26,21 @@ const Loginpage = () => {
 };
 
 export default Loginpage;
+import { createServerSupabaseClient } from "@supabase/auth-helpers-nextjs";
+export async function getServerSideProps(ctx) {
+  const client = createServerSupabaseClient(ctx);
+  let { data } = await client.auth.getUser()
+  let { user } = data
+  console.log(user)
+  if (user)
+    return {
+      redirect: {
+        destination: '/complete-profile'
+      }
+    }
+
+  return {
+    props: {}
+  }
+}
+

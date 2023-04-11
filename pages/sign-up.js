@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import Header from "../components/header";
 import SignUpForm from "../components/sign-up-form";
 import Footer from "../components/footer";
+import { createServerSupabaseClient } from "@supabase/auth-helpers-nextjs";
 
 const SignUp = () => {
   const router = useRouter();
@@ -26,3 +27,20 @@ const SignUp = () => {
 };
 
 export default SignUp;
+
+
+export async function getServerSideProps(ctx) {
+  const client = createServerSupabaseClient(ctx);
+  let { data } = await client.auth.getUser()
+  let { user } = data
+  if (user)
+    return {
+      redirect: {
+        destination: '/complete-profile'
+      }
+    }
+  console.log(user)
+  return {
+    props: {}
+  }
+}

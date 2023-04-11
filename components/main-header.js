@@ -26,12 +26,12 @@ const MainHeader = ({ dimensions, onCoursesByJohnClick }) => {
       >
         Courses by John
       </div>
-      <div className="flex-1 flex flex-row py-2.5 px-0 items-center justify-end gap-[27px] mq768:gap-[5px]">
+      <div  className="flex-1 flex flex-row py-2.5 px-0 items-center justify-end gap-[27px] mq768:gap-[5px]">
         <button
-          className="cursor-pointer py-0.5 px-[5px] bg-[transparent] self-stretch rounded-3xs flex flex-row items-center justify-center border-[1px] border-solid border-lightgray"
+          className="cursor-pointer py-0.5 px-[20px] bg-[transparent] self-stretch rounded-3xs flex flex-row items-center justify-center border-[1px] border-solid border-lightgray"
           onClick={onCreateBtnClick}
         >
-          <div className="relative text-base leading-[220.52%] font-inter text-black text-center sm:leading-[20px] mq768:text-base mq768:leading-[23px]">
+          <div className=" elative text-base leading-[220.52%] font-inter text-black text-center sm:leading-[20px] mq768:text-base mq768:leading-[23px]">
             Create Course
           </div>
         </button>

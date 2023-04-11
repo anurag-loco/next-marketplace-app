@@ -26,3 +26,41 @@ const CompleteProfile = () => {
 };
 
 export default CompleteProfile;
+
+
+import { prisma } from "../helpers/prisma";
+import checkUserProfile from "../helpers/user";
+import { createServerSupabaseClient } from "@supabase/auth-helpers-nextjs";
+export async function getServerSideProps(ctx) {
+  const client = createServerSupabaseClient(ctx);
+  let { data } = await client.auth.getUser()
+  let { user } = data
+  if (!user) {
+    return {
+      redirect: {
+        destination: '/'
+      }
+    }
+  }
+  else if (user) {
+    let userData = await prisma.user.findFirst({
+      where: {
+        id: user.id
+      }
+    });
+    console.log(userData)
+    //checking if user has filled the form already or not
+    if (userData && checkUserProfile(userData)) {
+      return {
+        redirect: {
+          destination: '/published-courses'
+        }
+      }
+    }
+  }
+
+
+  return {
+    props: {}
+  }
+}

@@ -1,10 +1,21 @@
 import { useRouter } from "next/router";
+import { useState } from "react";
 
-const ConfirmOrder = ({ onClose }) => {
+const ConfirmOrder = ({ onClose, price, id }) => {
   const router = useRouter();
+  let [email, setEmail] = useState()
+  let [name, setName] = useState()
+  const onButtonClick = async () => {
+    await fetch('/api/createOrder', {
+      method: "POST",
+      body: JSON.stringify({
+        name,
+        email,
+        price,
+        id
 
-  const onButtonClick = () => {
-    router.push("/published-courses");
+      })
+    })
   };
 
   return (
@@ -26,17 +37,22 @@ const ConfirmOrder = ({ onClose }) => {
         <div className="self-stretch flex flex-col py-0 px-[33px] items-start justify-start gap-[10px]">
           <input
             className="font-roboto text-xs bg-shades-white self-stretch rounded overflow-hidden flex flex-row py-2.5 px-3.5 items-center justify-start leading-[18px] [outline:none] border-[1px] border-solid border-studio-lightmode-midseparator-dee3eb"
-            type="text"
-            placeholder="Username or email address"
+            type="name"
+            onChange={e => setName(e.target.value)}
+            value={name}
+            placeholder="Name"
           />
           <input
             className="font-roboto text-xs bg-shades-white self-stretch rounded overflow-hidden flex flex-row py-2.5 px-3.5 items-center justify-start leading-[18px] [outline:none] border-[1px] border-solid border-studio-lightmode-midseparator-dee3eb"
-            type="password"
-            placeholder="Password"
+            type="text"
+            onChange={e => setEmail(e.target.value)}
+            value={email}
+            placeholder="Email address"
           />
+
         </div>
         <button
-          className="cursor-pointer [border:none] py-2 px-4 bg-black rounded-[3px] w-[115px] flex flex-row box-border items-center justify-center hover:bg-lightseagreen"
+          className="cursor-pointer [border:none] py-2 px-4 bg-black rounded-[3px] w-[115px] flex flex-row box-border items-center justify-center "
           onClick={onButtonClick}
         >
           <b className="relative text-xs leading-[150%] font-roboto text-shades-white text-left">

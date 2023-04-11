@@ -2,7 +2,18 @@ import { useState } from "react";
 import ConfirmOrder from "./confirm-order";
 import PortalPopup from "./portal-popup";
 
-const ProfessionVideoEditingContaine = () => {
+const ProfessionVideoEditingContaine = (props) => {
+  let {
+    name,
+    shortDescription,
+    bigDescription,
+    thumbnail,
+    category,
+    price,
+    createdAt,
+    id
+  } = props.course
+  const d = new Date(createdAt)
   const [isConfirmOrderPopup1Open, setConfirmOrderPopup1Open] = useState(false);
   const [isConfirmOrderPopupOpen, setConfirmOrderPopupOpen] = useState(false);
 
@@ -29,7 +40,7 @@ const ProfessionVideoEditingContaine = () => {
           <img
             className="self-stretch flex-1 relative rounded-3xs max-w-full overflow-hidden max-h-full object-cover sm:w-[100%!important] sm:h-[auto!important]"
             alt=""
-            src="/unsplashrezbvcvaspi@2x.png"
+            src={thumbnail}
           />
         </div>
         <div className="self-stretch flex-1 flex flex-col items-start justify-start md:flex-[unset] md:self-stretch">
@@ -38,47 +49,27 @@ const ProfessionVideoEditingContaine = () => {
               <div className="self-stretch flex flex-col items-start justify-start gap-[31px]">
                 <div className="self-stretch flex flex-col items-start justify-start text-13xl font-inter">
                   <b className="self-stretch relative leading-[43.63px]">
-                    Profession Video Editing
+                    {name}
                   </b>
                   <div className="self-stretch relative text-sm leading-[19.63px] font-roboto">
-                    Start editing your video professionally with Adobe Premiere
-                    Pro CC!
+                    {shortDescription}
                   </div>
                 </div>
                 <div className="self-stretch flex flex-row items-start justify-start">
                   <div className="flex-1 relative leading-[19.63px]">
-                    <p className="m-0">{`If you are looking for a video editing application that will allow you to edit videos however you want them, Adobe Premiere Pro is the best answer. Premiere Pro is used by professionals across the world for every type of production from business & marketing videos, music videos to documentaries, feature films. This full course is the best way to jump right in and start editing.`}</p>
-                    <p className="m-0">Make videos the way you imagine them!</p>
+                    {/* <p className="m-0">{`If you are looking for a video editing application that will allow you to edit videos however you want them, Adobe Premiere Pro is the best answer. Premiere Pro is used by professionals across the world for every type of production from business & marketing videos, music videos to documentaries, feature films. This full course is the best way to jump right in and start editing.`}</p>
+                    <p className="m-0">Make videos the way you imagine them!</p> */}
                     <p className="m-0">
-                      Practice editing while you learn. This course includes
-                      practice video files so you can follow along and actually
-                      learn by doing.
-                    </p>
-                    <p className="m-0">
-                      By the end of the course, you'll have edited a 1-minute
-                      documentary with the supplied footage.
-                    </p>
-                    <p className="m-0">
-                      I'll be teaching the course using the creative cloud
-                      version, but if you have a previous version (Mac or PC),
-                      you can still learn to edit like a pro.
-                    </p>
-                    <p className="m-0">What makes me qualified to teach you?</p>
-                    <p className="m-0">
-                      My name is Phil and I've been editing videos with Adobe
-                      Premiere Pro for over a decade. Plus I'm the creator of
-                      some of the world's most popular video editing courses -
-                      with over 3,000,000 students and thousands of 5-star
-                      reviews like these from the Adobe Premiere Pro course:
+                      {bigDescription}
                     </p>
                   </div>
                 </div>
                 <div className="self-stretch flex flex-row items-center justify-between">
                   <b className="relative leading-[19.63px]">
-                    Created on 27/11/2022
+                    Created on {d.toLocaleDateString()}
                   </b>
                   <b className="relative leading-[19.63px]">
-                    Creator: Bruce Wayne
+                    Creator: {props.course.User.firstName + ' ' + props.course.User.lastName}
                   </b>
                 </div>
               </div>
@@ -114,7 +105,7 @@ const ProfessionVideoEditingContaine = () => {
           placement="Centered"
           onOutsideClick={closeConfirmOrderPopup}
         >
-          <ConfirmOrder onClose={closeConfirmOrderPopup} />
+          <ConfirmOrder price={price} id={id} onClose={closeConfirmOrderPopup} />
         </PortalPopup>
       )}
     </>
