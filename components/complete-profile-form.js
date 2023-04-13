@@ -86,7 +86,7 @@ const CompleteProfileForm = () => {
             placeholder="https://unsplash.com/abc/xyz"
           />
         </div>
-        <button onClick={handleClick} className=" text-white py-4 cursor-pointer py-2 px-[65px] bg-black rounded-lg flex flex-row items-center justify-center border-[1px] border-solid border-black">
+        <button onClick={handleClick} className=" text-white cursor-pointer py-2 px-[65px] bg-black rounded-lg flex flex-row items-center justify-center border-[1px] border-solid border-black">
 
           Complete
 

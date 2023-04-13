@@ -22,6 +22,7 @@ module.exports = {
         "other-outlined-border": "rgba(0, 0, 0, 0.23)",
         slategray: "#576074",
         blueviolet: "#5922ce",
+        linen: "#fcf1e5",
       },
       fontFamily: {
         roboto: "Roboto",
